@@ -1,18 +1,24 @@
 {
-  "name": "back-end",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "proyecto-integrador-back-end",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "devDependencies": {},
   "scripts": {
-    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Santiagocapi/Proyecto-Integrador-Back-End.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "mysql": "^2.18.1"
-  }
+  "bugs": {
+    "url": "https://github.com/Santiagocapi/Proyecto-Integrador-Back-End/issues"
+  },
+  "homepage": "https://github.com/Santiagocapi/Proyecto-Integrador-Back-End#readme",
+  "description": ""
 }
