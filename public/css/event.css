@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+
+:root {
+  --negro: #0b0b0d;
+  --cian: #85e6c0;
+  --cian_oscuro: #6bb39b;
+  --cian_clarito: #daf3ea;
+  --blanco: #f7f4e8;
+  --gris: #5e5e5e;
+  --gris_claro: #9b9b9b;
+  --box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.1);
+  --contorno: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --contorno-hover: 0.2rem solid var(--negro);
+}
+
+/* Header */
+
+header .logo {
+  margin-right: 3rem;
+}
+
+/* Header Anchor Back To Home */
+
+.contenedor_inicio {
+  margin-right: 4rem;
+}
+
+.contenedor_inicio a {
+  color: var(--negro);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contenedor_inicio a:hover {
+  color: var(--cian_oscuro);
+}
+
+/* Section Step 1 */
+
+.contenedor_paso1 {
+  background-color: var(--cian_clarito);
+  margin-top: 8rem;
+  width: 93vw;
+  height: 3rem;
+  margin-left: 3vw;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.contenedor_paso1 p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cian_oscuro);
+}
+
+.contenedor_paso1 p .color_paso1 {
+  color: var(--cian);
+}
+
+.contenedor_paso1 i {
+  color: var(--cian_oscuro);
+  font-size: 1.4rem;
+}
+
+.contenedor_paso1 .paso1 {
+  color: var(--negro);
+}
+
+/* Main Information Of The Event */
+
+.contenedor_principal_eventos {
+  background-color: var(--cian_clarito);
+  margin: 2.5rem 0 0 3vw;
+  width: 93vw;
+  border-radius: 5px;
+  display: flex;
+}
+
+/* Event Image */
+
+.contenedor_img {
+  margin: 15px 10px 10px 15px;
+}
+
+.contenedor_img img {
+  width: 630px;
+  height: 650px;
+}
+
+/* Event Title */
+
+.contenedor_entradas .contenedor_titulo {
+  margin-top: 3rem;
+}
+
+.contenedor_entradas .contenedor_titulo h2{
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.icono{
+  color: var(--cian_oscuro);
+  font-size: 1.3rem;
+}
+
+.texto{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Date and Time of the Event */
+
+.contenedor_entradas .contenedor_fechayhora{
+  margin: 3rem 0 0 10px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Buy Ticket */
+
+.contenedor_entradas .compra_evento{
+  background-color: var(--gris);
+  border-radius: 100px;
+  padding: 1rem 4rem 1rem 1rem;
+  display: flex;
+  gap: 10px;
+  margin: 2rem 0 0 0;
+  border: 2px var(--cian) solid;
+}
+
+.contenedor_entradas .compra_evento i{
+  margin-left: 50px;
+  color: var(--cian_clarito);
+}
+
+.contenedor_entradas .compra_evento .texto{
+  color: var(--cian_clarito);
+}
+
+.contenedor_entradas .compra_evento:hover{
+  background-color: var(--cian_oscuro);
+  border-color: var(--gris);
+} 
+
+/* Price */
+
+.contenedor_entradas .contenedor_precio{
+  margin: 2rem 0 0 10px;
+}
+
+/* More information about the event */
+
+.contenedor_entradas .contenedor_informacion{
+  margin: 2rem 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
