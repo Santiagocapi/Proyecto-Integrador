@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EntradasArg</title>
+    <!-- LINK FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/41bcea2ae3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <!-- SIDEBAR´S ICON -->
+      <div class="div_icono">
+        <div id="menu">
+          <i class="fa-solid fa-bars icono"></i>
+        </div>
+      </div>
+      <!-- SIDEBAR -->
+      <div class="barra_lateral">
+        <h3>Localidades</h3>
+        <a href="#"
+          ><i class="fa-solid fa-location-dot"></i
+          ><span class="localidades">Buenos Aires</span></a
+        >
+        <a href="#"
+          ><i class="fa-solid fa-location-dot"></i
+          ><span class="localidades">Cordoba</span></a
+        >
+        <a href="#"
+          ><i class="fa-solid fa-location-dot"></i
+          ><span class="localidades">Mendoza</span></a
+        >
+        <a href="#"
+          ><i class="fa-solid fa-location-dot"></i
+          ><span class="localidades">San Juan</span></a
+        >
+        <a href="#"
+          ><i class="fa-solid fa-location-dot"></i
+          ><span class="localidades">Santiago del Estero</span></a
+        >
+        <div id="ayuda">
+          <a href="#" class="ayuda_menu" id="ayuda">Ayuda</a>
+        </div>
+      </div>
+
+      <!-- LOGO -->
+      <a href="#" class="logo">Entradas<span class="color_logo">Arg</span></a>
+    </header>
+
+    <!-- HELP SECTION -->
+
+    <section class="seccion_ayuda">
+      <div class="titulo">
+        <h1>Ayuda</h1>
+      </div>
+      <p>--------------------------------------------</p>
+      <div class="contenedor_info">
+        <h3>¿Qué es lo que estoy viendo?</h3>
+        <p>
+          Estos son los resultados que EntradasArg te brinda para que puedas
+          encontrar el evento que mas te guste, para seleccionar el evento
+          simplemente hacele click en su portada y segui las intrucciones para
+          hacer correctamente la compra de las entradas.
+        </p>
+      </div>
+      <p>--------------------------------------------</p>
+      <div class="contenedor_footer">
+        <p>
+          Contactate con nosotros por nuestras redes sociales si tenes alguna
+          duda.
+        </p>
+      </div>
+      <div class="contenedor_salida">
+        <a href="#" class="salida" id="cerrar_ayuda">Cerrar</a>
+      </div>
+    </section>
+
+    <!-- CAPTION -->
+
+    <section class="subtitulo">
+      <h2 class="titulo_sub">Consigue tu lugar ahora</h2>
+      <h4>Para el evento que vos quieras</h4>
+    </section>
+
+    <!-- MAIN -->
+
+    <main>
+      <div class="contenedor_eventos" id="evento">
+        <div class="box"></div>
+        <div class="a">
+          <img class="img"></img>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="box_contenedor">
+        <div class="box redes_box">
+          <h2 class="logo">Redes Sociales</h2>
+          <div class="redes_sociales">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+          </div>
+          <p>Enterate de los eventos primero que todos</p>
+        </div>
+
+        <div class="box contactos_box">
+          <h2 class="logo">Contactos</h2>
+          <a href="#" class="links">
+            <i class="fas fa-phone"></i>
+            <span class="contactos"> +261-559-0611</span>
+          </a>
+          <a href="#" class="links">
+            <i class="fas fa-phone"></i
+            ><span class="contactos"> +261-207-0387</span>
+          </a>
+          <a href="#" class="links">
+            <i class="fas fa-envelope"></i
+            ><span class="contactos"> tutanota@gmail.com</span>
+          </a>
+          <a href="#" class="links">
+            <i class="fas fa-map-marker-alt"></i
+            ><span class="contactos"> Medoza - Argentina</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="creditos">
+        <a href="https://autogestion.produccion.gob.ar/consumidores"
+          >Copyright EntradasArg - 2023. Todos los derechos reservados.</a
+        >
+      </div>
+    </footer>
+
+    <!-- LINK JAVASCRIPT -->
+    <script src="./js/script.js"></script>
+    <script src="./js/array.js"></script>
+    <script src="./js/event0.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+
+:root {
+  --negro: #0b0b0d;
+  --cian: #85e6c0;
+  --cian_oscuro: #6bb39b;
+  --cian_clarito: #daf3ea;
+  --blanco: #f7f4e8;
+  --gris: #5e5e5e;
+  --gris_claro: #9b9b9b;
+  --box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.1);
+  --contorno: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --contorno-hover: 0.2rem solid var(--negro);
+}
+
+* {
+  font-family: "Varela Round", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+  font-weight: 800;
+  font-family: "Alkatra", cursive;
+}
+
+.color_logo {
+  color: var(--negro);
+  font-size: 1.8rem;
+  font-family: "Alkatra", cursive;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  background-color: var(--cian_clarito);
+  position: fixed;
+  align-items: center;
+  padding: 3vh 8vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+}
+
+/* HEADER SIDEBAR´S ICON */
+
+header .div_icono {
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.2rem;
+  border-radius: 0.3rem;
+  background-color: var(--cian_clarito);
+  margin-left: 3rem;
+  font-size: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px var(--cian_oscuro) solid;
+}
+
+.header .div_icono .icono {
+  font-size: 1.4rem;
+  font-weight: 1000;
+  color: var(--gris);
+}
+
+.header .div_icono:hover {
+  background-color: var(--cian_oscuro);
+  border-color: var(--blanco);
+}
+
+/* HEADER LOGO */
+
+.header .logo {
+  color: var(--negro);
+  margin-right: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: "Alkatra", cursive;
+}
+
+.header .color_logo {
+  color: var(--cian_oscuro);
+  font-size: 1.8rem;
+  font-family: "Alkatra", cursive;
+}
+
+/* SIDEBAR */
+
+.header .barra_lateral {
+  position: absolute;
+  top: 115%;
+  padding: 2rem;
+  left: -20%;
+  box-shadow: var(--box-shadow);
+  background-color: var(--cian_clarito);
+  border-radius: 5px;
+  width: 15.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 21rem;
+}
+
+.header .barra_lateral.active {
+  left: 1%;
+  transition: 0.2s linear;
+}
+
+.header .barra_lateral h3 {
+  color: var(--negro);
+  font-family: "Alkatra", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header .barra_lateral .localidades {
+  color: var(--negro);
+}
+
+.header .barra_lateral .localidades:hover {
+  margin-left: 10px;
+}
+
+.header .barra_lateral a i {
+  color: var(--cian_oscuro);
+  margin-right: 5px;
+}
+
+.header .barra_lateral a i:hover {
+  margin-right: 10px;
+}
+
+.header .barra_lateral .ayuda_menu {
+  color: var(--negro);
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.header .barra_lateral .ayuda_menu:hover {
+  color: var(--cian_oscuro);
+}
+
+/* BODY PAGE */
+
+/* HELP SECTION*/
+
+.seccion_ayuda {
+  position: fixed;
+  right: -50%;
+  background-color: var(--cian_clarito);
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: 3px solid var(--cian_oscuro);
+  height: 50vh;
+}
+
+.seccion_ayuda .titulo {
+  margin-top: 32px;
+}
+
+.seccion_ayuda .titulo h1 {
+  color: var(--cian_oscuro);
+}
+
+.seccion_ayuda .contenedor_info {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seccion_ayuda .contenedor_salida {
+  margin-top: 20px;
+}
+
+.seccion_ayuda .contenedor_salida .salida {
+  background-color: var(--gris);
+  color: var(--cian_clarito);
+  font-weight: 700;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  border: 3px solid var(--cian_oscuro);
+}
+
+.seccion_ayuda .contenedor_salida .salida:hover {
+  background-color: var(--cian_oscuro);
+  border-color: var(--gris);
+}
+
+.seccion_ayuda.active {
+  right: 24.8%;
+  transition: 0.3s linear;
+}
+
+/* CAPTION */
+
+.subtitulo {
+  margin: 10rem 0rem 0rem 33rem;
+}
+
+.subtitulo h2 {
+  color: var(--cian_clarito);
+  display: inline-block;
+  position: relative;
+}
+
+.subtitulo h4 {
+  margin-left: 1.5rem;
+  color: var(--cian_clarito);
+}
+
+.subtitulo h2::after,
+h2::before {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 3px;
+  background-color: var(--cian_clarito);
+  top: 0.6em;
+}
+
+.subtitulo h2::before {
+  left: -150px;
+}
+
+.subtitulo h2::after {
+  right: -150px;
+}
+
+/* MAIN */
+
+/* EVENTS */
+
+.contenedor_eventos {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  margin-top: 2rem;
+  gap: 10px;
+}
+
+.evento_box {
+  text-align: center;
+}
+
+.evento_box img {
+  height: 600px;
+  width: 600px;
+  outline: var(--contorno);
+  outline-offset: -1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+
+.evento_box img:hover {
+  outline-offset: 0rem;
+  outline: var(--contorno-hover);
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--cian_clarito);
+  margin-top: 2rem;
+}
+
+footer .box_contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  text-align: center;
+}
+
+footer .box_contenedor .box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 1rem;
+}
+
+footer .box_contenedor .contactos_box {
+  margin-right: 20rem;
+}
+
+footer .box_contenedor .redes_box {
+  margin-left: 20rem;
+}
+
+footer .box_contenedor .box .links {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--negro);
+  font-weight: 700;
+}
+
+footer .box_contenedor .box .links i {
+  color: var(--cian_oscuro);
+}
+
+footer .box_contenedor .box .links .contactos:hover {
+  margin-left: 0.5rem;
+}
+
+footer .box_contenedor .box .redes_sociales {
+  display: flex;
+  gap: 2rem;
+  margin-left: 7.2rem;
+}
+
+footer .box_contenedor .box .redes_sociales a {
+  color: var(--cian_oscuro);
+  font-size: 1.3rem;
+}
+
+footer .box_contenedor .box .redes_sociales a:hover {
+  color: var(--gris);
+}
+
+footer .box_contenedor .box p {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+footer .creditos {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-top: 0.2rem solid var(--gris);
+}
+
+footer .creditos a {
+  color: var(--negro);
+}
+
+footer .creditos a:hover {
+  color: var(--cian_oscuro);
+}
+
+/* MEDIA QUERIES */
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<script>
+
+let menuLateral = document.querySelector(".barra_lateral");
+   ayuda = document.querySelector(".seccion_ayuda");
+
+document.querySelector("#menu").onclick = () => {
+  menuLateral.classList.toggle("active");
+};
+
+document.querySelector("#ayuda").onclick = () => {
+  ayuda.classList.toggle("active");
+  menuLateral.classList.remove("active")
+};
+
+document.querySelector("#cerrar_ayuda").onclick = () => {
+  ayuda.classList.remove("active");
+}
+
+</script>
