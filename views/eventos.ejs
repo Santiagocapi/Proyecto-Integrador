@@ -90,9 +90,12 @@
 
     <main>
       <div class="contenedor_eventos" id="evento">
-        <div class="box"></div>
-        <div class="a">
-          <img class="img"></img>
+        <div class="evento_box hide">
+          <% eventos.forEach(evento => { %>
+          <a href="">
+            <img src="<%= evento.imagenPortada %>"></img>
+          </a>
+          <% }); %>
         </div>
       </div>
     </main>
@@ -138,11 +141,6 @@
         >
       </div>
     </footer>
-
-    <!-- LINK JAVASCRIPT -->
-    <script src="./js/script.js"></script>
-    <script src="./js/array.js"></script>
-    <script src="./js/event0.js"></script>
   </body>
 </html>
 
@@ -188,6 +186,11 @@
   transition: all 0.2s linear;
   font-weight: 800;
   font-family: "Alkatra", cursive;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--gris_claro);
 }
 
 .color_logo {
@@ -267,8 +270,9 @@ header .div_icono {
   width: 15.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
   height: 21rem;
+  justify-content: center;
 }
 
 .header .barra_lateral.active {
@@ -303,6 +307,7 @@ header .div_icono {
 .header .barra_lateral .ayuda_menu {
   color: var(--negro);
   font-weight: 700;
+  font-size: 1.2rem;
   margin-top: 2rem;
 }
 
@@ -324,7 +329,7 @@ header .div_icono {
   align-items: center;
   border-radius: 5px;
   border: 3px solid var(--cian_oscuro);
-  height: 50vh;
+  height: 40vh;
 }
 
 .seccion_ayuda .titulo {
@@ -409,7 +414,6 @@ h2::before {
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
   margin-top: 2rem;
-  gap: 10px;
 }
 
 .evento_box {
@@ -418,9 +422,9 @@ h2::before {
 
 .evento_box img {
   height: 600px;
-  width: 600px;
+  width: 550px;
   outline: var(--contorno);
-  outline-offset: -1rem;
+  outline-offset: -0.2rem;
   box-shadow: var(--box-shadow);
   border-radius: 5px;
 }

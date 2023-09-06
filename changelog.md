@@ -1,3 +1,24 @@
+## [0.0.2] - 2023-09-06
+
+### Added
+
+- Insert the events in the ejs
+
+### Changed
+
+- Settings in styles
+
+### Fixed
+
+- Error with the ejs to show the events of the front
+
+### Unreleased
+
+- Add plays apart from musical events.
+- Ticket sales system
+- Events links
+- Media Queries
+
 ## [0.0.1] - 2023-08-30
 
 ### Added

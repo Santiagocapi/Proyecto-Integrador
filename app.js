@@ -17,10 +17,10 @@ app.get('/eventos', async (req, res) => {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     await client.connect();
 
-    const database = client.db('nombre_de_la_base_de_datos');
-    const eventosCollection = database.collection('eventos');
+    const database = client.db('musicEvents');
+    const eventosCollection = database.collection('Events');
 
-    const eventos = await eventosCollection.find({}).toArray();
+    const eventos = await eventosCollection.find({}).toArray(); 
     
     // Renderizar la vista 'eventos.ejs' con los datos de los eventos
     res.render('eventos', { eventos });
@@ -32,7 +32,7 @@ app.get('/eventos', async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}`);
-});
+});    
 
 
 // LEER Y IMPRIMIR LA BASE DE DATOS EN EL FRONT
