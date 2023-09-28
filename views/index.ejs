@@ -92,7 +92,7 @@
       <div class="contenedor_eventos" id="evento">
         <div class="evento_box hide">
           <% eventos.forEach(evento => { %>
-          <a href="">
+          <a href="/evento/<%= evento._id %>">
             <img src="<%= evento.imagenPortada %>"></img>
           </a>
           <% }); %>
@@ -373,18 +373,20 @@ header .div_icono {
 /* CAPTION */
 
 .subtitulo {
-  margin: 10rem 0rem 0rem 33rem;
+  margin-top: 10rem;
+  text-align: center;
 }
 
 .subtitulo h2 {
   color: var(--cian_clarito);
   display: inline-block;
   position: relative;
+  font-size: 1.7rem;
 }
 
 .subtitulo h4 {
-  margin-left: 1.5rem;
   color: var(--cian_clarito);
+  font-size: 1.2rem;
 }
 
 .subtitulo h2::after,
@@ -394,15 +396,16 @@ h2::before {
   width: 140px;
   height: 3px;
   background-color: var(--cian_clarito);
-  top: 0.6em;
 }
 
 .subtitulo h2::before {
   left: -150px;
+  top: 0.75em;
 }
 
 .subtitulo h2::after {
   right: -150px;
+  top: 0.8em;
 }
 
 /* MAIN */
@@ -413,11 +416,11 @@ h2::before {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .evento_box {
-  text-align: center;
+  margin-left: 5.5vw;
 }
 
 .evento_box img {
@@ -464,7 +467,7 @@ footer .box_contenedor .redes_box {
 
 footer .box_contenedor .box .links {
   display: block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--negro);
   font-weight: 700;
 }
@@ -480,7 +483,7 @@ footer .box_contenedor .box .links .contactos:hover {
 footer .box_contenedor .box .redes_sociales {
   display: flex;
   gap: 2rem;
-  margin-left: 7.2rem;
+  margin-left: 15.3rem;
 }
 
 footer .box_contenedor .box .redes_sociales a {
@@ -495,6 +498,7 @@ footer .box_contenedor .box .redes_sociales a:hover {
 footer .box_contenedor .box p {
   margin-top: 1rem;
   font-weight: 700;
+  font-size: 1rem;
 }
 
 footer .creditos {
@@ -515,10 +519,44 @@ footer .creditos a:hover {
 
 /* MEDIA QUERIES */
 
+@media (max-width: 1500px){
 
+  .seccion_ayuda{
+    height: 46vh;
+  }
 
+  .evento_box{
+    text-align: center;
+    margin-left: 0.3vw;
+  }
 
+  footer .box_contenedor .box .redes_sociales {
+  margin-left: 9.3rem;  
+  }
 
+}
+
+@media (max-width: 1100px){
+
+  .header .barra_lateral {
+    left: -50%;
+  }
+
+  footer .box_contenedor {
+  grid-template-columns: 30rem 30rem;
+  gap: 2rem;
+  justify-content: center;
+  }
+
+  footer .box_contenedor .box .redes_sociales {
+    margin-left: 1.3rem;
+  }
+
+  footer .creditos {
+    font-size: 1.1rem;
+  }
+
+}
 
 
 

@@ -1,3 +1,27 @@
+## [0.0.3] - 2023-09-28
+
+### Added
+
+- Link with event id
+- New help section in event.ejs
+- Event information in event.ejs
+- Media Queries in index.ejs
+
+### Changed
+
+- Styles in event.ejs
+
+### Fixed
+
+- Errors in app.js
+- Styles
+
+### Unreleased
+
+- Add plays apart from musical events.
+- Ticket sales system
+- Media Queries
+
 ## [0.0.2] - 2023-09-06
 
 ### Added
