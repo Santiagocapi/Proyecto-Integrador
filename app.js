@@ -1,29 +1,21 @@
 const express = require("express");
-const { MongoClient, ObjectId } = require("mongodb");
+const {
+  conectarBaseDeDatos,
+  obtenerEventoPorId,
+} = require("./app/db/db_conection");
 const ejs = require("ejs");
+const path = require("path");
 
 const app = express();
-const port = 3000; // Puerto en el que se ejecutará el servidor
-
-// URL de conexión a la base de datos
-const uri =
-  "mongodb+srv://scapitani:capi1234@cluster0.o3moaui.mongodb.net/?retryWrites=true&w=majority";
+const port = 3000;
 
 // Establecer ejs como motor de plantillas
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
+app.set("views", path.join(__dirname, "app/views"));
 
 app.get("/index", async (req, res) => {
   try {
-    const client = new MongoClient(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    await client.connect();
-
-    const database = client.db("musicEvents");
-    const eventosCollection = database.collection("Events");
-
+    const eventosCollection = await conectarBaseDeDatos();
     const eventos = await eventosCollection.find({}).toArray();
 
     // Renderizar la vista 'index.ejs' con los datos de los eventos
@@ -35,33 +27,37 @@ app.get("/index", async (req, res) => {
 });
 
 // Ruta para mostrar un evento específico
-app.get("/evento/:id", async (req, res) => {
+app.get("/evento/:eventoId", async (req, res) => {
   const eventoId = req.params.id; // Obtener el ID del evento desde la URL
 
   try {
-    const client = new MongoClient(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    await client.connect();
-
-    const database = client.db("musicEvents");
-    const eventosCollection = database.collection("Events");
-
-    // Convierte el eventoId a ObjectId
-    const objectId = new ObjectId(eventoId);
-
     // Buscar el evento por ID en la base de datos
-    const evento = await eventosCollection.findOne({ _id: objectId });
-
+    const evento = await obtenerEventoPorId(eventoId);
     // Regreso a index.ejs
     res.render("index.ejs", { evento });
+    if (!evento) {
+      return res.status(404).send("Evento no encontrado");
+    }
+  } catch (error) {
+    console.error("Error al obtener el evento:", error);
+    res.status(500).json({
+      message: "Ocurrió un error en el servidor (Informacion del Evento)",
+    });
+  }
+});
 
-    // Renderizar la página de detalle del evento
-    res.render("event.ejs", { evento });
+app.get("/evento/:id/tickets", async (req, res) => {
+  const eventoId = req.params.id;
+
+  try {
+    const evento = await obtenerEventoPorId(eventoId);
+
+    res.render("tickets", { evento });
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).json({ message: "Ocurrió un error en el servidor." });
+    res.status(500).json({
+      message: "Ocurrió un error en el servidor (Compra de Entradas)",
+    });
   }
 });
 

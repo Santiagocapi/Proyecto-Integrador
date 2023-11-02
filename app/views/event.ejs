@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EntradasArg - Informacion del evento</title>
+    <title>Informacion del evento</title>
     <!-- LINK FONT AWESOME -->
     <script
       src="https://kit.fontawesome.com/41bcea2ae3.js"
@@ -95,7 +95,7 @@
               evento.horarioEvento %>
             </p>
           </div>
-          <a href="./tickets.html" class="compra_evento"
+          <a href="/evento/<%= evento._id %>/tickets" class="compra_evento"
             ><i class="fa-solid fa-ticket icono"></i
             ><span class="texto">Compra tus entradas</span></a
           >
@@ -280,7 +280,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    height: 21rem;
+    height: 3rem;
     justify-content: center;
   }
 
@@ -484,7 +484,8 @@
   .contenedor_entradas .compra_evento {
     background-color: var(--gris);
     border-radius: 100px;
-    padding: 1rem 4rem 1rem 1rem;
+    padding: 1rem 2rem 1rem 1rem;
+    justify-content: center;
     display: flex;
     gap: 10px;
     margin: 2rem 0 0 0;
@@ -492,8 +493,8 @@
   }
 
   .contenedor_entradas .compra_evento i {
-    margin-left: 50px;
     color: var(--cian_clarito);
+    margin-top: 5.5px;
   }
 
   .contenedor_entradas .compra_evento .texto {
@@ -566,7 +567,7 @@
   footer .box_contenedor .box .redes_sociales {
     display: flex;
     gap: 2rem;
-    margin-left: 7.2rem;
+    margin-left: 15.3rem;
   }
 
   footer .box_contenedor .box .redes_sociales a {

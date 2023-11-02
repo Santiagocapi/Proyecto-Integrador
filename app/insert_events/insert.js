@@ -1,7 +1,7 @@
 // Conexión a la base de datos
 const MongoClient = require("mongodb").MongoClient;
 const uri =
-  "mongodb+srv://scapitani:capi1234@cluster0.o3moaui.mongodb.net/?retryWrites=true&w=majority";
+    "mongodb+srv://scapitani:santi1234@cluster0.eyalsgt.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

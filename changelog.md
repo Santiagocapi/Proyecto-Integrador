@@ -1,3 +1,51 @@
+## [0.0.5] - 2023-11-02
+
+### Added
+
+- Route to tickets.ejs
+- Database folder
+
+### Fixed
+
+### Changed
+
+- New structure project
+
+### Problems
+
+- Does not show event.ejs even though the path is correct
+
+### Unreleased
+
+- Add plays apart from musical events.
+- Ticket sales system
+- Payment methods
+- Media Queries in event.ejs and tickets.ejs
+- Move the styles that are in the ejs to their corresponding folders, the same with the js
+
+## [0.0.4] - 2023-10-31
+
+### Added
+
+- Tickets.ejs
+- Media Queries in index.ejs
+
+### Fixed
+
+- Show event image
+- Help Section in event.ejs
+
+### Changed
+
+- Styles in event.ejs, index.ejs and tickets.ejs
+
+### Unreleased
+
+- Add plays apart from musical events.
+- Ticket sales system
+- Payment methods
+- Media Queries in event.ejs and tickets.ejs
+
 ## [0.0.3] - 2023-09-28
 
 ### Added
@@ -5,7 +53,6 @@
 - Link with event id
 - New help section in event.ejs
 - Event information in event.ejs
-- Media Queries in index.ejs
 
 ### Changed
 

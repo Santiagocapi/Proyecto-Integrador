@@ -92,9 +92,9 @@
       <div class="contenedor_eventos" id="evento">
         <div class="evento_box hide">
           <% eventos.forEach(evento => { %>
-          <a href="/evento/<%= evento._id %>">
-            <img src="<%= evento.imagenPortada %>"></img>
-          </a>
+            <a href="/eventos/<%= evento._id %>">
+              <img src="<%= evento.imagenPortada %>"></img>
+            </a>
           <% }); %>
         </div>
       </div>
@@ -519,7 +519,7 @@ footer .creditos a:hover {
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1500px){
+@media (max-width: 1300px){
 
   .seccion_ayuda{
     height: 46vh;
@@ -531,7 +531,7 @@ footer .creditos a:hover {
   }
 
   footer .box_contenedor .box .redes_sociales {
-  margin-left: 9.3rem;  
+  margin-left: 6.3rem;  
   }
 
 }
