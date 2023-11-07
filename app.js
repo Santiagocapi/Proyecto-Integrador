@@ -1,8 +1,6 @@
 const express = require("express");
-const {
-  conectarBaseDeDatos,
-  obtenerEventoPorId,
-} = require("./app/db/db_conection");
+const { conectarBaseDeDatos } = require("./app/db/db_conection");
+const { ObjectId } = require("mongodb")
 const ejs = require("ejs");
 const path = require("path");
 
@@ -12,9 +10,11 @@ const port = 3000;
 // Establecer ejs como motor de plantillas
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "app/views"));
+app.use('/static', express.static(path.join(__dirname, 'app/static')));
 
 app.get("/index", async (req, res) => {
   try {
+
     const eventosCollection = await conectarBaseDeDatos();
     const eventos = await eventosCollection.find({}).toArray();
 
@@ -26,23 +26,20 @@ app.get("/index", async (req, res) => {
   }
 });
 
-// Ruta para mostrar un evento específico
-app.get("/evento/:eventoId", async (req, res) => {
-  const eventoId = req.params.id; // Obtener el ID del evento desde la URL
+// Ruta para mostrar un evento
+app.get("/eventos/:id", async (req, res) => {
+  // Obtener el ID del evento desde la URL
+  const eventoId = req.params.id;
 
   try {
-    // Buscar el evento por ID en la base de datos
-    const evento = await obtenerEventoPorId(eventoId);
-    // Regreso a index.ejs
-    res.render("index.ejs", { evento });
-    if (!evento) {
-      return res.status(404).send("Evento no encontrado");
-    }
+    const eventosCollection = await conectarBaseDeDatos();
+    const objectId = new ObjectId(eventoId);
+    const evento = await eventosCollection.findOne({ _id: objectId });
+
+    res.render("event", { evento });
   } catch (error) {
-    console.error("Error al obtener el evento:", error);
-    res.status(500).json({
-      message: "Ocurrió un error en el servidor (Informacion del Evento)",
-    });
+    console.error("Error:", error);
+    res.status(500).json({ message: "Ocurrió un error en el servidor (Informacion del Evento)"});
   }
 });
 
@@ -50,7 +47,9 @@ app.get("/evento/:id/tickets", async (req, res) => {
   const eventoId = req.params.id;
 
   try {
-    const evento = await obtenerEventoPorId(eventoId);
+    const eventosCollection = await conectarBaseDeDatos();
+    const objectId = new ObjectId(eventoId);
+    const evento = await eventosCollection.findOne({ _id: objectId });
 
     res.render("tickets", { evento });
   } catch (error) {
@@ -60,6 +59,7 @@ app.get("/evento/:id/tickets", async (req, res) => {
     });
   }
 });
+
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}`);

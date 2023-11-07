@@ -1,5 +1,5 @@
 let menuLateral = document.querySelector(".barra_lateral");
-let ayuda = document.querySelector(".seccion_ayuda");
+   ayuda = document.querySelector(".seccion_ayuda");
 
 document.querySelector("#menu").onclick = () => {
   menuLateral.classList.toggle("active");

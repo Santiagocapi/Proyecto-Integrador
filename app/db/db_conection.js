@@ -1,4 +1,4 @@
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient } = require("mongodb");
 
 async function conectarBaseDeDatos() {
   const uri =
@@ -13,18 +13,10 @@ async function conectarBaseDeDatos() {
     console.log("Conexión a la base de datos establecida.");
     const database = client.db("musicEvents");
     return database.collection("Events");
-
   } catch (error) {
     console.error("Error al conectar a la base de datos:", error);
     throw error;
   }
 }
 
-async function obtenerEventoPorId(eventoId) {
-  const eventosCollection = await conectarBaseDeDatos();
-  const objectId = new ObjectId(eventoId);
-  return eventosCollection.findOne({ _id: objectId });
-}
-
-
-module.exports = { conectarBaseDeDatos, obtenerEventoPorId };
+module.exports = { conectarBaseDeDatos};

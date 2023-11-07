@@ -1,8 +1,35 @@
+## [0.0.6] - 2023-11-07
+
+### Added
+
+- Styles in static folder
+- JS in static folder
+
+### Fixed
+
+- Show events in event.ejs with their id
+- Route to tickets.ejs
+
+### Changed
+
+- The styles are no longer in the ejs
+
+### Problems
+
+- Add tickets to table
+- Show tickets information
+
+### Unreleased
+
+- Add plays apart from musical events.
+- Ticket sales system
+- Payment methods
+- Media Queries in event.ejs and tickets.ejs
+
 ## [0.0.5] - 2023-11-02
 
 ### Added
 
-- Route to tickets.ejs
 - Database folder
 
 ### Fixed
@@ -14,6 +41,7 @@
 ### Problems
 
 - Does not show event.ejs even though the path is correct
+- Route to tickets.ejs
 
 ### Unreleased
 

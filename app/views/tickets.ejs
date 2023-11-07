@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seleccion de Entradas</title>
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" href="/static/css/event.css" />
+    <link rel="stylesheet" href="/static/css/tickets.css" />
     <!-- LINK FONT AWESOME -->
     <script
       src="https://kit.fontawesome.com/41bcea2ae3.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="/app/static/css/tickets.css" />
   </head>
   <body>
     <header class="header">
       <!-- SideBar´s Icon -->
       <div class="contenedor_volver">
-        <a href="/event" class="volver">Volver atras</a>
+        <a href="/event:id" class="volver">Volver atras</a>
       </div>
       <!-- Logo -->
       <a href="#" class="logo">Entradas<span class="color_logo">Arg</span></a>
@@ -38,22 +43,31 @@
 
     <section class="contenedor_info">
       <div class="contenedor_titulo">
-        <h2 class="titulo">Titulo</h2>
+        <h2 class="titulo"><%= evento.nombreEvento %></h2>
       </div>
       <div class="contenedor_precio">
-        <p class="texto"><i class="fa-solid fa-money-bill icono"></i> Precio</p>
+        <p class="texto">
+          <i class="fa-solid fa-money-bill icono"></i> Precio General: <%=
+          evento.precioEntradaGeneral %>$ <br />
+          Precio VIP: <%= evento.precioEntradaExclusiva %>
+        </p>
       </div>
       <div class="contenedor_fecha">
         <p class="texto">
-          <i class="fa-solid fa-calendar-days icono"></i> Fecha
+          <i class="fa-solid fa-calendar-days icono"></i> Fecha: <%=
+          evento.fechaEvento.toDateString() %>
         </p>
       </div>
       <div class="contenedor_hora">
-        <p class="texto"><i class="fa-solid fa-clock icono"></i> Hora</p>
+        <p class="texto">
+          <i class="fa-solid fa-clock icono"></i> Hora: <%= evento.horarioEvento
+          %>
+        </p>
       </div>
       <div class="contenedor_extras">
         <p class="texto">
-          <i class="fa-solid fa-location-dot icono"></i> Ubicacion
+          <i class="fa-solid fa-location-dot icono"></i> Ubicacion: <%=
+          evento.ubicacion %>
         </p>
       </div>
     </section>
@@ -62,12 +76,22 @@
 
     <section class="contenedor_venta_entradas">
       <div class="contenedor_img">
-        <img src="./imagenes/MDIA-3106fd9f.jpg" alt="" />
+        <img src="<%= evento.imagenPortada %>" alt="" />
       </div>
       <div class="contenedor_entradas">
         <h3 class="titulo">COMPRAR ENTRADAS</h3>
-        <a href="" class="entrada">Sector General</a>
-        <a href="" class="entrada">Sector VIP</a>
+        <a href="#" class="entrada" id="general">Sector General</a>
+        <a href="#" class="entrada" id="vip">Sector VIP</a>
+        <div class="info_entradas hide" id="info_entrada">
+          <p>Precio de la entrada: <span id="precio_entrada"></span>$</p>
+          <button id="agregar_entrada">Añadir Entrada</button>
+        </div>
+        <div class="entradas_agregadas hide" id="entradas_agregadas">
+          <h4>Entradas Agregadas</h4>
+          <table id="tabla_entradas">
+
+          </table>
+        </div>
         <p class="consigna">Repite si queres agregar mas de una</p>
       </div>
     </section>
@@ -114,126 +138,5 @@
       </div>
     </footer>
   </body>
+  <script src="/static/js/entradas/add_tickets.js"></script>
 </html>
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
-
-  :root {
-    --negro: #0b0b0d;
-    --cian: #85e6c0;
-    --cian_oscuro: #6bb39b;
-    --cian_clarito: #daf3ea;
-    --blanco: #f7f4e8;
-    --gris: #5e5e5e;
-    --gris_claro: #9b9b9b;
-    --box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.1);
-    --contorno: 0.1rem solid rgba(0, 0, 0, 0.1);
-    --contorno-hover: 0.2rem solid var(--negro);
-  }
-
-  /* Header */
-
-  header .logo {
-    margin-right: 6rem;
-  }
-
-  /* Header Anchor Back */
-
-  .contenedor_volver {
-    margin-left: 3rem;
-  }
-
-  .contenedor_volver .volver {
-    color: var(--negro);
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-
-  .contenedor_volver .volver:hover {
-    color: var(--cian);
-  }
-
-  /* Information Section */
-
-  .contenedor_info {
-    background-color: var(--cian_clarito);
-    width: 93vw;
-    margin: 2.5rem 0 0 3vw;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-
-  .contenedor_info .contenedor_titulo {
-    margin: 1rem 0 0 1rem;
-  }
-
-  .contenedor_info .contenedor_titulo h2 {
-    font-size: 2rem;
-  }
-
-  .contenedor_info .contenedor_precio {
-    margin: 1rem 0 0 0;
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .contenedor_info .contenedor_fecha {
-    margin: 1rem 0 0 1rem;
-    grid-column: 1;
-  }
-
-  .contenedor_info .contenedor_hora {
-    margin: 1rem 0 0 1rem;
-    grid-column: 1;
-  }
-
-  .contenedor_info .contenedor_extras {
-    margin: 1rem 0 0 0;
-    grid-column: 2;
-  }
-
-  /* Buy Tocket Section */
-
-  .contenedor_venta_entradas {
-    background-color: var(--cian_clarito);
-    width: 93vw;
-    margin: 2.5rem 0 2.5rem 3vw;
-    display: flex;
-    border-radius: 5px;
-  }
-
-  .contenedor_venta_entradas .contenedor_entradas {
-    margin: 15px 0 0 9.5rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contenedor_venta_entradas .contenedor_entradas .titulo {
-    font-size: 1.3rem;
-  }
-
-  .contenedor_venta_entradas .contenedor_entradas .entrada {
-    margin-top: 10px;
-    background-color: var(--gris);
-    border: solid 3px var(--cian);
-    border-radius: 15px;
-    color: var(--cian_clarito);
-    padding: 10px 50px;
-  }
-
-  .contenedor_venta_entradas .contenedor_entradas .entrada:hover {
-    background-color: var(--cian_oscuro);
-    border-color: var(--gris);
-  }
-
-  .contenedor_venta_entradas .contenedor_entradas .consigna {
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: 800;
-  } 
-</style>
