@@ -1,23 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap");
 
 :root {
-  --negro: #0b0b0d;
-  --cian: #85e6c0;
-  --cian_oscuro: #6bb39b;
-  --cian_clarito: #daf3ea;
-  --blanco: #f7f4e8;
-  --gris: #5e5e5e;
-  --gris_claro: #9b9b9b;
+  --negro: #000000;
+  --celeste: #6fd6ff;
+  --claro: #d1d1d15a;
+  --blanco: #ffffff;
+  --gris: #a9a8a8;
+  --amarillo: #e8bb00;
   --box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.1);
   --contorno: 0.1rem solid rgba(0, 0, 0, 0.1);
   --contorno-hover: 0.2rem solid var(--negro);
 }
 
-/* Header */
 
-header .logo {
-  margin-right: 3rem;
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+  text-decoration: none;
 }
 
 /* Header Anchor Back To Home */
@@ -33,13 +37,14 @@ header .logo {
 }
 
 .contenedor_inicio a:hover {
-  color: var(--cian_oscuro);
+  color: var(--amarillo);
 }
 
 /* Section Step 1 */
 
 .contenedor_paso1 {
-  background-color: var(--cian_clarito);
+  background-color: var(--blanco);
+  box-shadow: var(--box-shadow);
   margin-top: 8rem;
   width: 93vw;
   height: 3rem;
@@ -54,15 +59,15 @@ header .logo {
 .contenedor_paso1 p {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--cian_oscuro);
+  color: var(--celeste);
 }
 
 .contenedor_paso1 p .color_paso1 {
-  color: var(--cian);
+  color: var(--amarillo);
 }
 
 .contenedor_paso1 i {
-  color: var(--cian_oscuro);
+  color: var(--celeste);
   font-size: 1.4rem;
 }
 
@@ -73,7 +78,8 @@ header .logo {
 /* Main Information Of The Event */
 
 .contenedor_principal_eventos {
-  background-color: var(--cian_clarito);
+  background-color: var(--blanco);
+  box-shadow: var(--box-shadow);
   margin: 2.5rem 0 0 3vw;
   width: 93vw;
   border-radius: 5px;
@@ -99,11 +105,10 @@ header .logo {
 
 .contenedor_entradas .contenedor_titulo h2{
   font-size: 2rem;
-  font-weight: 500;
 }
 
 .icono{
-  color: var(--cian_oscuro);
+  color: var(--amarillo);
   font-size: 1.3rem;
 }
 
@@ -123,27 +128,23 @@ header .logo {
 /* Buy Ticket */
 
 .contenedor_entradas .compra_evento{
-  background-color: var(--gris);
-  border-radius: 100px;
-  padding: 1rem 4rem 1rem 1rem;
+  background-color: var(--celeste);
+  border-radius: 15px;
+  padding: 10px;
+  width: 300px;
   display: flex;
+  justify-content: center;
   gap: 10px;
-  margin: 2rem 0 0 0;
-  border: 2px var(--cian) solid;
-}
-
-.contenedor_entradas .compra_evento i{
-  margin-left: 50px;
-  color: var(--cian_clarito);
+  margin-top: 1.5rem;
 }
 
 .contenedor_entradas .compra_evento .texto{
-  color: var(--cian_clarito);
+  color: var(--negro);
+  font-size: 1rem;
 }
 
 .contenedor_entradas .compra_evento:hover{
-  background-color: var(--cian_oscuro);
-  border-color: var(--gris);
+  background-color: var(--blanco);
 } 
 
 /* Price */

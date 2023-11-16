@@ -1,14 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap");
 
 :root {
-  --negro: #0b0b0d;
-  --cian: #85e6c0;
-  --cian_oscuro: #6bb39b;
-  --cian_clarito: #daf3ea;
-  --blanco: #f7f4e8;
-  --gris: #5e5e5e;
-  --gris_claro: #9b9b9b;
+  --negro: #000000;
+  --celeste: #6fd6ff;
+  --claro: #d1d1d15a;
+  --blanco: #ffffff;
+  --gris: #a9a8a8;
+  --amarillo: #e8bb00;
   --box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.1);
   --contorno: 0.1rem solid rgba(0, 0, 0, 0.1);
   --contorno-hover: 0.2rem solid var(--negro);
@@ -16,8 +14,8 @@
 
 /* Header */
 
-header .logo {
-  margin-right: 6rem;
+.header .logo {
+  margin-left: 2.5rem;
 }
 
 /* Header Anchor Back */
@@ -33,13 +31,14 @@ header .logo {
 }
 
 .contenedor_volver .volver:hover {
-  color: var(--cian);
+  color: var(--celeste);
 }
 
 /* Information Section */
 
 .contenedor_info {
-  background-color: var(--cian_clarito);
+  background-color: var(--blanco);
+  box-shadow: var(--box-shadow);
   width: 93vw;
   margin: 2.5rem 0 0 3vw;
   border-radius: 5px;
@@ -80,7 +79,8 @@ header .logo {
 /* Buy Tocket Section */
 
 .contenedor_venta_entradas {
-  background-color: var(--cian_clarito);
+  background-color: var(--blanco);
+  box-shadow: var(--box-shadow);
   width: 93vw;
   margin: 2.5rem 0 2.5rem 3vw;
   display: flex;
@@ -88,7 +88,8 @@ header .logo {
 }
 
 .contenedor_venta_entradas .contenedor_entradas {
-  margin: 15px 0 0 9.5rem;
+  margin: 15px 0 0 11.5rem;
+  width: 700px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -99,75 +100,149 @@ header .logo {
 }
 
 .contenedor_venta_entradas .contenedor_entradas .entrada {
-  margin-top: 10px;
-  background-color: var(--gris);
-  border: solid 3px var(--cian);
+  margin-top: 15px;
+  background-color: var(--celeste);
   border-radius: 15px;
+  padding: 10px;
+  width: 300px;
+  margin-left: 12.5rem;
+}
+
+.contenedor_venta_entradas .contenedor_entradas .entrada:hover {
+  background-color: var(--blanco);
+}
+
+.info_entradas {
+  gap: 18px;
+  margin-top: 1rem;
+  align-items: center;
+  margin-left: 13.8rem;
+}
+
+.info_entradas button {
+  cursor: pointer;
+  background-color: var(--gris);
+  border: solid 2px var(--cian);
+  border-radius: 5px;
   color: var(--cian_clarito);
-  padding: 10px 50px;
+  padding: 5px 12px;
 }
 
-.contenedor_venta_entradas .contenedor_entradas .entrada:hover{
-    background-color: var(--cian_oscuro);
-    border-color: var(--gris);
+.info_entradas button:hover {
+  background-color: var(--cian_oscuro);
+  border-color: var(--gris);
 }
 
-.contenedor_venta_entradas .contenedor_entradas .consigna{
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: 800;
+.entradas_agregadas {
+  margin-top: 1rem;
 }
 
 .hide {
   display: none;
 }
 
-#info_entrada {
+.tabla_entradas {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
-#precio_entrada {
+.tabla_entradas th,
+.tabla_entradas td {
+  border: 1px solid var(--gris);
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla_entradas th {
+  background-color: var(--gris_claro);
+}
+
+.tabla_entradas tfoot {
   font-weight: bold;
 }
 
-#agregar_entrada {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
+#total_pagar {
+  font-size: 18px;
+}
+
+.comprar_entradas {
+  padding: 10px;
+  background-color: var(--celeste);
+  color: --negro;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-#agregar_entrada:hover {
-  background-color: #45a049;
+.aumentar {
+  background-color: var(--celeste);
+  color: var(--negro);
+  padding: 5px;
+  width: 30px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-#entradas_agregadas {
-  margin-top: 20px;
+.disminuir {
+  background-color: var(--amarillo);
+  color: var(--negro);
+  padding: 5px;
+  width: 30px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-#tabla_entradas {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+.borrar .eliminar {
+  background-color: var(--amarillo);
+  color: var(--negro);
+  padding: 5px;
+  width: 80px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-#tabla_entradas th, #tabla_entradas td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
+.comprar_entradas:hover {
+  background-color: var(--blanco);
 }
 
-#tabla_entradas th {
-  background-color: #f2f2f2;
+@media (max-width: 1700px) {
+  .contenedor_venta_entradas .contenedor_entradas {
+    margin: 15px 0 0 4.5rem;
+  }
+  footer .box_contenedor .box .redes_sociales {
+    margin-left: 11.6rem;
+  }
 }
 
-#tabla_entradas tr:nth-child(even) {
-  background-color: #f2f2f2;
+@media (max-width: 1600px) {
+  .contenedor_venta_entradas .contenedor_entradas {
+    margin: 15px 0 0 3.5rem;
+  }
+  footer .box_contenedor .box .redes_sociales {
+    margin-left: 11.2rem;
+  }
 }
 
-#tabla_entradas tr:hover {
-  background-color: #f5f5f5;
+@media (max-width: 1300px) {
+
+  footer .box_contenedor .box .redes_sociales {
+    margin-left: 5.5rem;
+  }
+
+  .contenedor_venta_entradas .contenedor_entradas .titulo{
+    margin-right: 5rem;
+  }
+  .contenedor_venta_entradas .contenedor_entradas .entrada {
+    margin-left: 1.5rem;
+}
+  .entradas_agregadas h4{
+    margin-right: 5rem;
+  }
+  .tabla_entradas{
+    margin-left: -2rem;
+  }
 }

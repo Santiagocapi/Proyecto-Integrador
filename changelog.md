@@ -1,3 +1,81 @@
+## [0.0.9] - 2023-11-15
+
+### Added
+
+- buy.js
+- Route to buy.js in app.js
+
+### Fixed
+
+
+### Changed
+
+
+### Problems
+
+
+### Unreleased
+
+- Ticket sales system
+- Payment methods
+- Add more events
+
+## [0.0.8] - 2023-11-12
+
+### Added
+
+- Function to increase the number of entries
+- Function to decrease the number of entries
+- Delete button in the table
+- Total price update
+- Media Queries in event.ejs and tickets.ejs
+
+### Fixed
+
+- Add tickets to table
+
+### Changed
+
+- Font
+- Color Pallete
+- Styles
+
+### Problems
+
+
+### Unreleased
+
+- Ticket sales system
+- Payment methods
+- Media Queries in event.ejs and tickets.ejs
+- Add more events
+
+## [0.0.7] - 2023-11-11
+
+### Added
+
+- 
+
+### Fixed
+
+- Show Tickets Information
+
+### Changed
+
+- run.js to launch the application
+
+### Problems
+
+### Unreleased
+
+- Ticket sales system
+- Payment methods
+- Media Queries in event.ejs and tickets.ejs
+- Change fonts
+- Change color palette
+- Add more events
+
+
 ## [0.0.6] - 2023-11-07
 
 ### Added

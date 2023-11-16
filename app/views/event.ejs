@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informacion del evento</title>
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="/static/css/event.css">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" href="/static/css/event.css" />
     <!-- LINK FONT AWESOME -->
     <script
       src="https://kit.fontawesome.com/41bcea2ae3.js"
@@ -16,55 +16,14 @@
   </head>
   <body>
     <header class="header">
-      <!-- SIDEBAR´S ICON -->
-      <div class="div_icono">
-        <div id="menu">
-          <i class="fa-solid fa-bars icono"></i>
-        </div>
-      </div>
-      <!-- SIDEBAR -->
-      <div class="barra_lateral">
-        <div id="ayuda">
-          <a href="#" class="ayuda_menu" id="ayuda">Ayuda</a>
-        </div>
-      </div>
-
-      <!-- LOGO -->
-      <a href="#" class="logo">Entradas<span class="color_logo">Arg</span></a>
-
       <!-- BACK TO HOME -->
       <div class="contenedor_inicio">
         <a href="/index" class="inicio">Volver al inicio</a>
       </div>
+
+      <!-- LOGO -->
+      <a href="#" class="logo">Entradas<span class="color_logo">Arg</span></a>
     </header>
-
-    <!-- HELP SECTION -->
-
-    <section class="seccion_ayuda">
-      <div class="titulo">
-        <h1>Ayuda</h1>
-      </div>
-      <p>--------------------------------------------</p>
-      <div class="contenedor_info">
-        <h3>¿Qué es lo que estoy viendo?</h3>
-        <p>
-          Este el primer paso de tres para comprar tus entradas, en esta pagina
-          vas a poder ver la informacion del evento seleccionado anteriormente,
-          si todo esta a tu gusta y te interesa seguir con la compra de entrada,
-          simplemente dale al boton que dice "COMPRA TUS ENTRDAS"
-        </p>
-      </div>
-      <p>--------------------------------------------</p>
-      <div class="contenedor_footer">
-        <p>
-          Contactate con nosotros por nuestras redes sociales si tenes alguna
-          duda.
-        </p>
-      </div>
-      <div class="contenedor_salida">
-        <a href="#" class="salida" id="cerrar_ayuda">Cerrar</a>
-      </div>
-    </section>
 
     <!-- SECTION STEP 1 -->
     <section class="contenedor_paso1">
@@ -91,7 +50,7 @@
           <div class="contenedor_fechayhora">
             <p class="texto">
               <i class="fa-solid fa-calendar-days icono"></i> Fecha: <%=
-              evento.fechaEvento.toDateString() %>
+              evento.fechaEvento.toLocaleDateString('es-AR') %>
             </p>
             <p class="texto">
               <i class="fa-solid fa-clock icono"></i> Hora: <%=
@@ -99,24 +58,25 @@
             </p>
           </div>
           <a href="/evento/<%= evento._id %>/tickets" class="compra_evento"
-            ><i class="fa-solid fa-ticket icono"></i
             ><span class="texto">Compra tus entradas</span></a
           >
           <div class="contenedor_precio">
             <p>
               <i class="fa-solid fa-money-bill icono"></i
               ><span class="texto">
-                Precio General: <%= evento.precioEntradaGeneral %>$ Precio VIP:
-                <%= evento.precioEntradaExclusiva %>$</span
+                Precio General: <%= evento.precioEntradaGeneral %>$<br />Precio
+                VIP: <%= evento.precioEntradaExclusiva %>$</span
               >
             </p>
           </div>
           <div class="contenedor_informacion">
             <p class="texto separacion">
-              <i class="fa-solid fa-user icono"></i> <%= evento.edadDisponible %>
+              <i class="fa-solid fa-user icono"></i> <%= evento.edadDisponible
+              %>
             </p>
             <p class="texto">
-              <i class="fa-solid fa-clock icono"></i> Duracion: <%= evento.duracionEvento %> 
+              <i class="fa-solid fa-clock icono"></i> Duracion: <%=
+              evento.duracionEvento %>
             </p>
           </div>
         </div>
@@ -130,29 +90,29 @@
         <div class="box redes_box">
           <h2 class="logo">Redes Sociales</h2>
           <div class="redes_sociales">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
+            <a class="fab fa-facebook-f color1"></a>
+            <a class="fab fa-twitter color2"></a>
+            <a class="fab fa-instagram color1"></a>
           </div>
           <p>Enterate de los eventos primero que todos</p>
         </div>
 
         <div class="box contactos_box">
           <h2 class="logo">Contactos</h2>
-          <a href="#" class="links">
-            <i class="fas fa-phone"></i>
+          <a class="links">
+            <i class="fas fa-phone color1"></i>
             <span class="contactos"> +261-559-0611</span>
           </a>
-          <a href="#" class="links">
-            <i class="fas fa-phone"></i
+          <a class="links">
+            <i class="fas fa-phone color2"></i
             ><span class="contactos"> +261-207-0387</span>
           </a>
-          <a href="#" class="links">
-            <i class="fas fa-envelope"></i
+          <a class="links">
+            <i class="fas fa-envelope color1"></i
             ><span class="contactos"> tutanota@gmail.com</span>
           </a>
-          <a href="#" class="links">
-            <i class="fas fa-map-marker-alt"></i
+          <a class="links">
+            <i class="fas fa-map-marker-alt color2"></i
             ><span class="contactos"> Medoza - Argentina</span>
           </a>
         </div>
@@ -160,11 +120,11 @@
 
       <div class="creditos">
         <a href="https://autogestion.produccion.gob.ar/consumidores"
-          >Copyright EntradasArg - 2023. Todos los derechos reservados.</a
+          >Copyright Entradas<span class="color_logo">Arg</span> - 2023. Todos
+          los derechos reservados.</a
         >
       </div>
     </footer>
   </body>
   <script src="/static/js/menu/move.js"></script>
 </html>
-

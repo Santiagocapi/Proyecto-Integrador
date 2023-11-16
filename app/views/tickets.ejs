@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seleccion de Entradas</title>
+    <!-- LINK JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- LINK CSS -->
     <link rel="stylesheet" href="/static/css/styles.css" />
     <link rel="stylesheet" href="/static/css/event.css" />
@@ -13,13 +15,12 @@
       src="https://kit.fontawesome.com/41bcea2ae3.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/app/static/css/tickets.css" />
   </head>
   <body>
     <header class="header">
-      <!-- SideBar´s Icon -->
+      <!-- Go Back -->
       <div class="contenedor_volver">
-        <a href="/event:id" class="volver">Volver atras</a>
+        <a href="" class="volver">Volver atras</a>
       </div>
       <!-- Logo -->
       <a href="#" class="logo">Entradas<span class="color_logo">Arg</span></a>
@@ -47,9 +48,9 @@
       </div>
       <div class="contenedor_precio">
         <p class="texto">
-          <i class="fa-solid fa-money-bill icono"></i> Precio General: <%=
-          evento.precioEntradaGeneral %>$ <br />
-          Precio VIP: <%= evento.precioEntradaExclusiva %>
+          <i class="fa-solid fa-money-bill icono"></i> Precio General: $<%=
+          evento.precioEntradaGeneral %> <br />
+          Precio VIP: $<%= evento.precioEntradaExclusiva %>
         </p>
       </div>
       <div class="contenedor_fecha">
@@ -79,20 +80,36 @@
         <img src="<%= evento.imagenPortada %>" alt="" />
       </div>
       <div class="contenedor_entradas">
-        <h3 class="titulo">COMPRAR ENTRADAS</h3>
-        <a href="#" class="entrada" id="general">Sector General</a>
-        <a href="#" class="entrada" id="vip">Sector VIP</a>
-        <div class="info_entradas hide" id="info_entrada">
-          <p>Precio de la entrada: <span id="precio_entrada"></span>$</p>
-          <button id="agregar_entrada">Añadir Entrada</button>
-        </div>
+        <h3 class="titulo">SELECCIONA LA ENTRADA</h3>
+        <button href="" class="entrada" id="general">Sector General</button>
+        <button href="" class="entrada" id="vip">Sector VIP</button>
         <div class="entradas_agregadas hide" id="entradas_agregadas">
           <h4>Entradas Agregadas</h4>
-          <table id="tabla_entradas">
-
+          <table class="tabla_entradas">
+            <thead>
+              <tr>
+                <th class="tipo_entrada">Tipo de Entrada</th>
+                <th class="cantidad_entrada">Cantidad</th>
+                <th class="precio">Precio</th>
+                <th class="borrar"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Las filas se agregan automaticamente al agregar el ticket -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <td class="total">Total a pagar:</td>
+                <td id="total_pagar">0</td>
+              </tr>
+              <tr>
+                <td colspan="4">
+                  <button href="/evento/<%= evento._id %>/compra" class="comprar_entradas" id="comprar_entradas">Comprar Entradas</button>
+                </td>
+              </tr>
+            </tfoot>
           </table>
         </div>
-        <p class="consigna">Repite si queres agregar mas de una</p>
       </div>
     </section>
 
@@ -103,29 +120,29 @@
         <div class="box redes_box">
           <h2 class="logo">Redes Sociales</h2>
           <div class="redes_sociales">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
+            <a class="fab fa-facebook-f color1"></a>
+            <a class="fab fa-twitter color2"></a>
+            <a class="fab fa-instagram color1"></a>
           </div>
           <p>Enterate de los eventos primero que todos</p>
         </div>
 
         <div class="box contactos_box">
           <h2 class="logo">Contactos</h2>
-          <a href="#" class="links">
-            <i class="fas fa-phone"></i>
+          <a class="links">
+            <i class="fas fa-phone color1"></i>
             <span class="contactos"> +261-559-0611</span>
           </a>
-          <a href="#" class="links">
-            <i class="fas fa-phone"></i
+          <a class="links">
+            <i class="fas fa-phone color2"></i
             ><span class="contactos"> +261-207-0387</span>
           </a>
-          <a href="#" class="links">
-            <i class="fas fa-envelope"></i
+          <a class="links">
+            <i class="fas fa-envelope color1"></i
             ><span class="contactos"> tutanota@gmail.com</span>
           </a>
-          <a href="#" class="links">
-            <i class="fas fa-map-marker-alt"></i
+          <a class="links">
+            <i class="fas fa-map-marker-alt color2"></i
             ><span class="contactos"> Medoza - Argentina</span>
           </a>
         </div>
@@ -133,10 +150,19 @@
 
       <div class="creditos">
         <a href="https://autogestion.produccion.gob.ar/consumidores"
-          >Copyright EntradasArg - 2023. Todos los derechos reservados.</a
+          >Copyright Entradas<span class="color_logo">Arg</span> - 2023. Todos
+          los derechos reservados.</a
         >
       </div>
     </footer>
   </body>
-  <script src="/static/js/entradas/add_tickets.js"></script>
+  <script>
+    var eventoInfo = {
+      precioEntradaGeneral: <%= evento.precioEntradaGeneral %>,
+      precioEntradaExclusiva: <%= evento.precioEntradaExclusiva %>,
+    };
+  </script>
+  <script src="/static/js/entradas/tickets_table.js"></script>
+  <script src="/static/js/entradas/grab_data.js"></script>
+
 </html>

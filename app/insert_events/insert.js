@@ -1,7 +1,8 @@
 // Conexión a la base de datos
 const MongoClient = require("mongodb").MongoClient;
+
 const uri =
-    "mongodb+srv://scapitani:santi1234@cluster0.eyalsgt.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://scapitani:santi1234@cluster0.eyalsgt.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -63,5 +64,5 @@ async function insertarEventos() {
   }
 }
 
-// Llamada a la función para insertar eventos
+// Llamar la funcion
 insertarEventos();

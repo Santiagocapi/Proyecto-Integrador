@@ -1,16 +1,15 @@
 const express = require("express");
-const { conectarBaseDeDatos } = require("./app/db/db_conection");
+const { conectarBaseDeDatos } = require("./db/db_conection");
 const { ObjectId } = require("mongodb")
 const ejs = require("ejs");
 const path = require("path");
 
 const app = express();
-const port = 3000;
 
 // Establecer ejs como motor de plantillas
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "app/views"));
-app.use('/static', express.static(path.join(__dirname, 'app/static')));
+app.set("views", path.join(__dirname, "views"));
+app.use('/static', express.static(path.join(__dirname, 'static')));
 
 app.get("/index", async (req, res) => {
   try {
@@ -60,10 +59,26 @@ app.get("/evento/:id/tickets", async (req, res) => {
   }
 });
 
+app.get("/evento/:id/compra", async (req, res) => {
+  const eventoId = req.params.id;
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en el puerto ${port}`);
+  try {
+      const eventosCollection = await conectarBaseDeDatos();
+      const objectId = new ObjectId(eventoId);
+      const evento = await eventosCollection.findOne({ _id: objectId });
+    
+      res.render("buy", { evento });
+  } catch (error) {
+      console.error("Error:", error);
+      res.status(500).json({
+          message: "Ocurrió un error en el servidor (Compra de Entradas)",
+      });
+  }
 });
+
+
+
+module.exports = app;
 
 // Leer y imprimir la base de datos en el frontend
 // app.get('/eventos', async (req, res) => {
