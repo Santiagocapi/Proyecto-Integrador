@@ -254,6 +254,11 @@ header .div_icono {
   outline: var(--contorno-hover);
 }
 
+#mensaje_no_eventos{
+  text-align: center;
+  display: none;
+}
+
 /* FOOTER */
 
 footer {

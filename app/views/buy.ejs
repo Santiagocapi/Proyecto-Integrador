@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Compra de Entradas</title>
+    <!-- LINK JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- LINK CSS -->
     <link rel="stylesheet" href="/static/css/styles.css" />
     <link rel="stylesheet" href="/static/css/event.css" />
     <link rel="stylesheet" href="/static/css/tickets.css" />
+    <link rel="stylesheet" href="/static/css/buy.css" />
     <!-- LINK FONT AWESOME -->
     <script
       src="https://kit.fontawesome.com/41bcea2ae3.js"
@@ -18,7 +21,9 @@
     <header class="header">
       <!-- Go Back -->
       <div class="contenedor_volver">
-        <a href="" class="volver">Volver atras</a>
+        <a href="/evento/<%= evento._id %>/tickets" class="volver"
+          >Volver atras</a
+        >
       </div>
       <!-- Logo -->
       <a href="#" class="logo">Entradas<span class="color_logo">Arg</span></a>
@@ -35,14 +40,164 @@
         <span class="color_paso1">2</span> 3
       </p>
       <i class="fa-solid fa-arrow-right"></i>
-      <p class="paso1">Seleccion de entradas</p>
+      <p class="paso1">Compra de entradas</p>
     </section>
 
     <main>
-        <section class="contenedor_compra">
-            <h3>COMPRA DE ENTRADAS</h3>
-        </section>        
+      <!-- Your Tickets -->
+      <section class="contenedor_entradas">
+        <h3>TUS ENTRADAS</h3>
+        <div class="contenedor_entradas">
+          <table class="tabla_entradas">
+            <thead>
+              <tr>
+                <th class="tipo_entrada">Tipo de Entrada</th>
+                <th class="cantidad_entrada">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Las filas se agregan automáticamente al agregar el ticket -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <td class="total">Total a pagar:</td>
+                <td id="total_pagar">0</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section to buy your Tickets -->
+      <section class="contenedor_compra">
+        <h3>COMPRAR</h3>
+        <form action="/enviar_correo" method="POST" class="form" id="form">
+          <label class="form_label" for="nombre">Nombre :</label>
+          <input
+            class="form_input"
+            name="nombre"
+            id="nombre"
+            type="text"
+            placeholder="Ej: Santiago"
+            required
+          />
+          <br />
+          <label class="form_label" for="email">Gmail :</label>
+          <input
+            class="form_input"
+            name="email"
+            id="email"
+            type="ema"
+            placeholder="Ej: capitanisantiago@gmail.com"
+            required
+          />
+          <br />
+          <label class="form_label" for="nombre_tarjeta"
+            >Nombre del tutor de la tarjeta :</label
+          >
+          <input
+            class="form_input"
+            name="nombre_tarjeta"
+            type="text"
+            placeholder="Ej: Santiago Capitani"
+            required
+          />
+          <br />
+          <label class="form_label" for="numero_tarjeta"
+            >Numero de tarjeta :</label
+          >
+          <input
+            class="form_input"
+            name="numero_tarjeta"
+            type="text"
+            maxlength="16"
+            placeholder="Ej: 5547123493797232"
+            required
+          />
+
+          <div class="form_date_cvc">
+            <label class="form_label" for="fecha">Fecha de vencimiento :</label>
+            <label class="form_label cvc" for="">CVC :</label>
+
+            <div>
+              <input
+                class="form_input expired"
+                name="fecha"
+                type="text"
+                maxlength="2"
+                placeholder="MM"
+                required
+              />
+              <input
+                class="form_input expired"
+                name="fecha"
+                type="text"
+                maxlength="2"
+                placeholder="YY"
+                required
+              />
+            </div>
+
+            <input
+              class="form_input expired cvc"
+              name="cvc"
+              type="text"
+              maxlength="3"
+              placeholder="Ej: 123"
+              required
+            />
+          </div>
+
+          <div>
+            <button class="form_button" type="submit">Comprar</button>
+          </div>
+        </form>
+      </section>
     </main>
 
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="box_contenedor">
+        <div class="box redes_box">
+          <h2 class="logo">Redes Sociales</h2>
+          <div class="redes_sociales">
+            <a class="fab fa-facebook-f color1"></a>
+            <a class="fab fa-twitter color2"></a>
+            <a class="fab fa-instagram color1"></a>
+          </div>
+          <p>Enterate de los eventos primero que todos</p>
+        </div>
+
+        <div class="box contactos_box">
+          <h2 class="logo">Contactos</h2>
+          <a class="links">
+            <i class="fas fa-phone color1"></i>
+            <span class="contactos"> +261-559-0611</span>
+          </a>
+          <a class="links">
+            <i class="fas fa-phone color2"></i
+            ><span class="contactos"> +261-207-0387</span>
+          </a>
+          <a class="links">
+            <i class="fas fa-envelope color1"></i
+            ><span class="contactos"> tutanota@gmail.com</span>
+          </a>
+          <a class="links">
+            <i class="fas fa-map-marker-alt color2"></i
+            ><span class="contactos"> Medoza - Argentina</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="creditos">
+        <a href="https://autogestion.produccion.gob.ar/consumidores"
+          >Copyright Entradas<span class="color_logo">Arg</span> - 2023. Todos
+          los derechos reservados.</a
+        >
+      </div>
+    </footer>
   </body>
+  <script src="/static/js/entradas/grab_data.js"></script>
+  <script src="/static/js/entradas/tickets_table.js"></script>
 </html>

@@ -96,4 +96,17 @@ $(document).ready(function () {
     }
     actualizarTabla();
   });
+
+   // Almacena la informacion de la tabla para luego mostrarla en buy.ejs
+   $("#comprar_entradas").on("click", function () {
+    var entradas = {
+      cantidadGeneral: cantidadGeneral,
+      cantidadVIP: cantidadVIP,
+      precioGeneral: precioGeneral,
+      precioVIP: precioVIP,
+    };
+
+    localStorage.setItem("entradas", JSON.stringify(entradas));
+  });
+
 });

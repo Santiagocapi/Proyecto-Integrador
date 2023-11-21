@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap");
+
+:root {
+  --negro: #000000;
+  --celeste: #6fd6ff;
+  --claro: #d1d1d15a;
+  --blanco: #ffffff;
+  --gris: #a9a8a8;
+  --amarillo: #e8bb00;
+  --box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.1);
+  --contorno: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --contorno-hover: 0.2rem solid var(--negro);
+}
+
+main {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+section {
+  background-color: var(--blanco);
+  width: 90vh;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+section h3{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Your Tickets Section */
+
+.tabla_entradas{
+  width: 80%;
+  margin-left: 5.1rem;
+}
+
+/* Form Section */
+
+.form{
+    margin-left: 1rem;
+}
+
+.form input {
+
+    height: 40px;
+    width: 300px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid --negrow;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--claro);
+    padding-left: 1rem;
+}
+
+.form .cvc{
+  margin-right: 30rem;
+}
+
+.form .expired{
+    width: 100px;
+}
+
+.form_date_cvc{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 5px;
+}
+
+.form_button{
+  padding: 0.7rem 2rem;
+  background-color: var(--celeste);
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form_button:hover{
+  background-color: var(--claro);
+}

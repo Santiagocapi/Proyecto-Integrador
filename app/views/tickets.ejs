@@ -20,7 +20,7 @@
     <header class="header">
       <!-- Go Back -->
       <div class="contenedor_volver">
-        <a href="" class="volver">Volver atras</a>
+        <a href="/eventos/<%= evento._id %>" class="volver">Volver atras</a>
       </div>
       <!-- Logo -->
       <a href="#" class="logo">Entradas<span class="color_logo">Arg</span></a>
@@ -104,7 +104,13 @@
               </tr>
               <tr>
                 <td colspan="4">
-                  <button href="/evento/<%= evento._id %>/compra" class="comprar_entradas" id="comprar_entradas">Comprar Entradas</button>
+                  <button
+                    href="/evento/<%= evento._id %>/compra"
+                    class="comprar_entradas"
+                    id="comprar_entradas"
+                  >
+                    Comprar Entradas
+                  </button>
                 </td>
               </tr>
             </tfoot>
@@ -157,12 +163,16 @@
     </footer>
   </body>
   <script>
+
     var eventoInfo = {
-      precioEntradaGeneral: <%= evento.precioEntradaGeneral %>,
-      precioEntradaExclusiva: <%= evento.precioEntradaExclusiva %>,
+          precioEntradaGeneral: <%= evento.precioEntradaGeneral %>,
+          precioEntradaExclusiva: <%= evento.precioEntradaExclusiva %>,
     };
+
+    document.getElementById('comprar_entradas').addEventListener('click', function() {
+      window.location.href = '/evento/<%= evento._id %>/compra'; 
+    });
+
   </script>
   <script src="/static/js/entradas/tickets_table.js"></script>
-  <script src="/static/js/entradas/grab_data.js"></script>
-
 </html>

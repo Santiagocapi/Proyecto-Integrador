@@ -26,6 +26,10 @@
         <h3>Localidades</h3>
         <a href="#"
           ><i class="fa-solid fa-location-dot"></i
+          ><span class="localidades">Todos</span></a
+        >
+        <a href="#"
+          ><i class="fa-solid fa-location-dot"></i
           ><span class="localidades">Buenos Aires</span></a
         >
         <a href="#"
@@ -94,12 +98,13 @@
       <div class="contenedor_eventos" id="evento">
         <div class="evento_box hide">
           <% eventos.forEach(evento => { %>
-            <a href="/eventos/<%= evento._id %>">
+            <a class="hide" href="/eventos/<%= evento._id %>" data_ubicacion="<%= evento.ubicacionProvincia %>">
               <img src="<%= evento.imagenPortada %>"></img>
             </a>
           <% }); %>
         </div>
       </div>
+      <div id="mensaje_no_eventos">No hay eventos en esta ubicación.</div>
     </main>
 
     <!-- FOOTER -->
@@ -145,4 +150,5 @@
     </footer>
   </body>
   <script src="/static/js/menu/move.js"></script>
+  <script src="/static/js/localidades/ubi_eventos.js"></script>
 </html>

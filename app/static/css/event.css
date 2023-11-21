@@ -12,18 +12,6 @@
   --contorno-hover: 0.2rem solid var(--negro);
 }
 
-
-* {
-  font-family: "Poppins", sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  transition: all 0.2s linear;
-  text-decoration: none;
-}
-
 /* Header Anchor Back To Home */
 
 .contenedor_inicio {

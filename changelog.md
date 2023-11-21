@@ -1,8 +1,57 @@
+## [0.1.1] - 2023-11-21
+
+### Added
+
+- Html and styles to buy.ejs
+- Grab table data to show your tickets in buy.ejs
+- Ticket sales system
+- Payment methods
+- Libreria "nodemailer" to send gmail
+
+### Fixed
+
+- Routes
+- Filtering events with location
+
+### Changed
+
+
+### Problems
+
+- Send gmail
+- Problems with main entry of package.json
+
+### Unreleased
+
+- Add more events
+
+## [0.1.0] - 2023-11-16
+
+### Added
+
+- Filtering events with location
+
+### Fixed
+
+
+### Changed
+
+
+### Problems
+
+- Route to buy.ejs
+
+### Unreleased
+
+- Ticket sales system
+- Payment methods
+- Add more events
+
 ## [0.0.9] - 2023-11-15
 
 ### Added
 
-- buy.js
+- buy.ejs
 - Route to buy.js in app.js
 
 ### Fixed
