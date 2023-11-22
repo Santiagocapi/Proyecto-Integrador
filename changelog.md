@@ -1,3 +1,24 @@
+## [0.1.2] - 2023-11-22
+
+### Added
+
+- Send Mail
+
+### Fixed
+
+- Problems with main entry of package.json
+
+### Changed
+
+
+### Problems
+
+- FormSubmit
+
+### Unreleased
+
+- Add more events
+
 ## [0.1.1] - 2023-11-21
 
 ### Added

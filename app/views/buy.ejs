@@ -71,11 +71,11 @@
       <!-- Section to buy your Tickets -->
       <section class="contenedor_compra">
         <h3>COMPRAR</h3>
-        <form action="/enviar_correo" method="POST" class="form" id="form">
+        <form id="compraForm" method="POST" class="form">
           <label class="form_label" for="nombre">Nombre :</label>
           <input
             class="form_input"
-            name="nombre"
+            name="name"
             id="nombre"
             type="text"
             placeholder="Ej: Santiago"
@@ -87,7 +87,7 @@
             class="form_input"
             name="email"
             id="email"
-            type="ema"
+            type="email"
             placeholder="Ej: capitanisantiago@gmail.com"
             required
           />
@@ -149,7 +149,7 @@
           </div>
 
           <div>
-            <button class="form_button" type="submit">Comprar</button>
+            <button class="form_button" type="button" onclick="enviarFormulario()">Comprar</button>
           </div>
         </form>
       </section>
@@ -199,5 +199,6 @@
     </footer>
   </body>
   <script src="/static/js/entradas/grab_data.js"></script>
-  <script src="/static/js/entradas/tickets_table.js"></script>
+  <script src="/static/js/gmail/send_gmail.js"></script>
+
 </html>
