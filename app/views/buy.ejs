@@ -71,12 +71,12 @@
       <!-- Section to buy your Tickets -->
       <section class="contenedor_compra">
         <h3>COMPRAR</h3>
-        <form id="compraForm" method="POST" class="form">
+        <form id="compraForm" method="POST" action="/enviar" class="form">
           <label class="form_label" for="nombre">Nombre :</label>
           <input
             class="form_input"
             name="name"
-            id="nombre"
+            id="name"
             type="text"
             placeholder="Ej: Santiago"
             required
@@ -149,7 +149,7 @@
           </div>
 
           <div>
-            <button class="form_button" type="button" onclick="enviarFormulario()">Comprar</button>
+            <button class="form_button" type="submit" >Comprar</button>
           </div>
         </form>
       </section>

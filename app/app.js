@@ -1,6 +1,7 @@
 const express = require("express");
 const { conectarBaseDeDatos } = require("./db/db_conection");
 const { ObjectId } = require("mongodb");
+const transporter = require("./static/js/gmail/mailer");
 const ejs = require("ejs");
 const path = require("path");
 
@@ -77,6 +78,28 @@ app.get("/evento/:id/compra", async (req, res) => {
     });
   }
 });
+
+app.post("/enviar", async (req, res) => {
+  try {
+
+    const { email } = req.body;
+
+    await transporter.sendMail({
+      from: '"EntradasArg" <entradasargentinaeventos@gmail.com>',
+      to: email,
+      subject: "Entradas para nombreEvento ",
+      html: "<b>Gracias por tu compra</b><br><p>Debera mostrar este gmail en la entrada del recital.</p>"
+    });
+    console.log("Correo electrónico enviado correctamente");
+    res.render("message");
+  } catch (error) {
+    console.error("Error al enviar el correo electrónico:", error);
+    res.status(500).json({
+      message: "Ocurrió un error en el servidor (Compra de Entradas)",
+    });
+  }
+});
+
 
 module.exports = app;
 
